@@ -29,6 +29,6 @@
     "@types/papaparse": "^4.1.33",
     "@types/puppeteer": "^1.2.0",
     "source-map-support": "^0.5.4",
-    "typescript": "^2.8.1"
+    "typescript": "^2.8.3"
   }
 }

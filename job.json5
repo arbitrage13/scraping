@@ -100,6 +100,31 @@
                 dataType: 'number',
             },
             //End Statement of Financial Position
+            //Begin Statement of Comprehensive Income
+            {
+                loop: [
+                    {
+                        tplSelector: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(9) > td > table > tbody',
+                        excludes: [1, -1], 
+                    },
+                    {
+                        tplSelectoer: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(9) > td > table > tbody > tr:nth-child({{index-0}})',
+                        excludes: [1],
+                    },
+                ],
+                data: {
+                    name:{ tplSelector: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(9) > td > table > tbody > tr:nth-child({{index-0}}) > td:nth-child(1)'},
+                    value:{ tplSelector: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(9) > td > table > tbody > tr:nth-child({{index-0}}) > td:nth-child({{index-1}})'},
+                    year:{
+                        tplSelector: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(9) > td > table > tbody > tr:nth-child(1) > td:nth-child({{index-1}})',
+                        regex: '^[^\\n]+',
+                    },
+                },
+                dataType: 'number',
+            },
+            //End of Statement of Comprehensive Income
         ]
     }
-}
+    
+
+
