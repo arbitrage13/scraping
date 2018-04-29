@@ -8,9 +8,11 @@
         },
     },
     contexts: [
-        { ticker: 'SCC'},
-        { ticker: 'TR'},
-        //{ ticker: 'AEONTS'}
+    {ticker: 'PTT'},
+    {ticker:  'IVL' },
+    {ticker: 'AMANAH'}
+
+
     ],
     action: {
         tplUrl: 'https://www.set.or.th/set/factsheet.do?symbol={{ticker}}&ssoPageId=3&language=en&country=TH',
@@ -24,6 +26,7 @@
                     regex: '\\d+.+\\d{4}'
                 },
             },
+            { name: 'business', value: { selector: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(3) > td:nth-child(1) > table:nth-child(5) > tbody > tr:nth-child(2) > td'}},
             {
                 loop: {
                     tplSelector: 'body > table > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(1)',
